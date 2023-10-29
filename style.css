@@ -106,3 +106,9 @@ body {
   font-weight: 400;
   line-height: normal;
 }
+
+@media (max-width: 667px) {
+  .container {
+    width: 350px;
+  }
+}
