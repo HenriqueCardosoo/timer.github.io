@@ -114,5 +114,6 @@ body {
   }
   .relogio-centro button {
     top: -60px;
+    margin: 15px;
   }
 }
