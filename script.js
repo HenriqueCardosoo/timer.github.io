@@ -21,14 +21,18 @@ function iniciaRelogio() {
 iniciar.addEventListener('click', function (event) {
   clearInterval(timer);
   iniciaRelogio();
+  relogio.classList.remove('style-color');
 });
 
 pausar.addEventListener('click', function (event) {
   clearInterval(timer);
+  relogio.classList.add('style-color');
+  relogio.style.transition = '0.3s';
 });
 
 zerar.addEventListener('click', function (event) {
   clearInterval(timer);
   relogio.innerHTML = '00:00:00';
   segundos = 0;
+  relogio.classList.remove('style-color');
 });
