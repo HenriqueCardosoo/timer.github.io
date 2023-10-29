@@ -88,6 +88,10 @@ body {
   line-height: normal;
 }
 
+.style-color {
+  color: #e513d0;
+}
+
 .zerar {
   width: 67px;
   height: 29px;
