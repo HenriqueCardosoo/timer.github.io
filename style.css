@@ -109,13 +109,9 @@ body {
 
 @media (max-width: 667px) {
   .container {
-    width: 350px;
     height: 200px;
   }
   .relogio-centro button {
     top: -60px;
-  }
-  .relogio-centro {
-    align-items: center;
   }
 }
