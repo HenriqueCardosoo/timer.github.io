@@ -84,8 +84,6 @@ body {
   }
   .relogio-centro button {
     top: -60px;
-  }
-  .button {
-    font-size: 14px;
+    margin: 10px;
   }
 }
