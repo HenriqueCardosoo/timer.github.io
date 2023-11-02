@@ -38,3 +38,22 @@ zerar.addEventListener('click', function (event) {
   segundos = 0;
   relogio.classList.remove('style-color-blink');
 });
+
+function selecionarPausar() {
+  pausar.addEventListener('click', () => {
+    pausar.classList.add('selected');
+    iniciar.classList.remove('selected');
+    zerar.classList.remove('selected');
+  });
+  iniciar.addEventListener('click', () => {
+    iniciar.classList.add('selected');
+    pausar.classList.remove('selected');
+    zerar.classList.remove('selected');
+  });
+  zerar.addEventListener('click', () => {
+    zerar.classList.add('selected');
+    iniciar.classList.remove('selected');
+    pausar.classList.remove('selected');
+  });
+}
+selecionarPausar();
