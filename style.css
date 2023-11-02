@@ -30,6 +30,23 @@ h1 {
   color: #e6c9fd;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 35px;
+
+  background: linear-gradient(45deg, #ff00e5, #e513d0, #bb81f4, #ff00e5);
+  background-size: 400% 100%;
+  animation: animaH1 10s linear infinite alternate;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@keyframes animaH1 {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
 }
 
 .relogio-centro {
@@ -52,6 +69,16 @@ button {
   color: #fff;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d3a8ff;
+  transition: 0.5s;
+}
+
+.button.selected {
+  background-color: #e513d0;
 }
 
 .relogio {
