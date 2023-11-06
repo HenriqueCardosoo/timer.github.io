@@ -14,32 +14,38 @@ const pausar = document.querySelector('.pausar');
 const zerar = document.querySelector('.zerar');
 
 let milissegundos = 0;
-let timer;
+let startTime;
+let isRunning = false;
 
-function iniciaRelogio() {
-  timer = setInterval(function () {
-    milissegundos += 10;
-    relogio.innerHTML = criarHoraDosSegundos(milissegundos / 1000);
-    const milessegundosHTML = relogio.querySelector('.milessegundos');
-    milessegundosHTML.style.fontSize = '16px';
-  }, 10);
+function atualizaCronometro() {
+  const tempoAtual = Date.now();
+  const delta = tempoAtual - startTime;
+  milissegundos += delta;
+  relogio.innerHTML = criarHoraDosSegundos(milissegundos / 1000);
+  startTime = tempoAtual;
+  if (isRunning) {
+    requestAnimationFrame(atualizaCronometro);
+  }
 }
 
 iniciar.addEventListener('click', function (event) {
-  clearInterval(timer);
-  iniciaRelogio();
+  if (!isRunning) {
+    startTime = Date.now();
+    isRunning = true;
+    requestAnimationFrame(atualizaCronometro);
+  }
   relogio.classList.remove('style-color-blink');
   relogio.style.transition = '0.3s';
 });
 
 pausar.addEventListener('click', function (event) {
-  clearInterval(timer);
+  isRunning = false;
   relogio.classList.add('style-color-blink');
   relogio.style.transition = '0.3s';
 });
 
 zerar.addEventListener('click', function (event) {
-  clearInterval(timer);
+  isRunning = false;
   milissegundos = 0;
   relogio.innerHTML = '00:00:00<span class="milessegundos">00</span>';
   relogio.classList.remove('style-color-blink');
