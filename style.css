@@ -105,6 +105,11 @@ button:hover {
   animation: blinking 1s linear infinite;
 }
 
+.milessegundos {
+  font-size: 1rem;
+  position: absolute;
+}
+
 @media (max-width: 667px) {
   .container {
     width: 350px;
